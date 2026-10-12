@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moreira, Alves & Associados | Advocacia e Consultoria Jurídica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        :root {
+            --azul-escuro: #0a1929;
+            --azul-marinho: #1a2f4a;
+            --dourado: #c9a961;
+            --dourado-claro: #e0c687;
+            --bege: #f5f1e8;
+            --cinza: #6b7280;
+            --branco: #ffffff;
+            --texto: #2c3e50;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--texto);
+            line-height: 1.6;
+            background: var(--branco);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 25, 41, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--branco);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--dourado);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-family: 'Arial', sans-serif;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--dourado);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dourado);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--branco);
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 25, 41, 0.92), rgba(26, 47, 74, 0.88)),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%230a1929" width="1200" height="800"/><g opacity="0.1"><path d="M0 400 Q300 200 600 400 T1200 400" stroke="%23c9a961" stroke-width="2" fill="none"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--branco);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--branco), transparent);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--dourado);
+            color: var(--dourado);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: normal;
+        }
+
+        .hero h1 span {
+            color: var(--dourado);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-family: 'Arial', sans-serif;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid var(--dourado);
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--dourado);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--branco);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--branco);
+            color: var(--azul-escuro);
+            border-color: var(--branco);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title .subtitle {
+            color: var(--dourado);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--azul-marinho);
+            font-weight: normal;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--dourado);
+            margin: 1.5rem auto 0;
+        }
+
+        /* SOBRE */
+        .sobre {
+            background: var(--bege);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sobre-img {
+            height: 500px;
+            background: linear-gradient(135deg, var(--azul-marinho), var(--azul-escuro));
+            position: relative;
+            border: 10px solid var(--branco);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dourado);
+            font-size: 8rem;
+        }
+
+        .sobre-img::before {
+            content: '⚖';
+        }
+
+        .sobre-texto h3 {
+            font-size: 2rem;
+            color: var(--azul-marinho);
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 1.5rem;
+            color: var(--cinza);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201, 169, 97, 0.3);
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--dourado);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--cinza);
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* ÁREAS DE ATUAÇÃO */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .area-card {
+            background: var(--branco);
+            padding: 2.5rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--dourado);
+            transition: height 0.4s;
+        }
+
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(10, 25, 41, 0.1);
+            border-color: var(--dourado);
+        }
+
+        .area-card:hover::before {
+            height: 100%;
+        }
+
+        .area-icon {
+            font-size: 3rem;
+            color: var(--dourado);
+            margin-bottom: 1.5rem;
+        }
+
+        .area-card h3 {
+            color: var(--azul-marinho);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .area-card p {
+            color: var(--cinza);
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* DIFERENCIAIS */
+        .diferenciais {
+            background: var(--azul-marinho);
+            color: var(--branco);
+        }
+
+        .diferenciais .section-title h2 {
+            color: var(--branco);
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .diferencial-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .diferencial-item .icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--dourado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--dourado);
+            transition: all 0.3s;
+        }
+
+        .diferencial-item:hover .icon {
+            background: var(--dourado);
+            color: var(--azul-marinho);
+            transform: rotate(360deg);
+        }
+
+        .diferencial-item h3 {
+            margin-bottom: 1rem;
+            color: var(--dourado);
+            font-size: 1.2rem;
+        }
+
+        .diferencial-item p {
+            font-family: 'Arial', sans-serif;
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+
+        /* EQUIPE */
+        .equipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .advogado-card {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .advogado-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .advogado-foto {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--azul-marinho), var(--azul-escuro));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dourado);
+            font-size: 4rem;
+            border: 4px solid var(--dourado);
+            transition: all 0.3s;
+        }
+
+        .advogado-card:hover .advogado-foto {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        .advogado-card h3 {
+            color: var(--azul-marinho);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .advogado-card .cargo {
+            color: var(--dourado);
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .advogado-card .oab {
+            font-size: 0.85rem;
+            color: var(--cinza);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* DEPOIMENTOS */
+        .depoimentos {
+            background: var(--bege);
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .depoimento {
+            background: var(--branco);
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .depoimento::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--dourado);
+            font-family: Georgia, serif;
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .depoimento p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--texto);
+            position: relative;
+            z-index: 1;
+        }
+
+        .depoimento-autor {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .autor-foto {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--dourado);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            font-weight: bold;
+        }
+
+        .autor-info strong {
+            color: var(--azul-marinho);
+            display: block;
+        }
+
+        .autor-info span {
+            font-size: 0.85rem;
+            color: var(--cinza);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .estrelas {
+            color: var(--dourado);
+            margin-bottom: 1rem;
+        }
+
+        /* CONTATO */
+        .contato {
+            background: var(--branco);
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contato-info h3 {
+            color: var(--azul-marinho);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+        }
+
+        .contato-info p {
+            color: var(--cinza);
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bege);
+            transition: all 0.3s;
+        }
+
+        .info-item:hover {
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            transform: translateX(10px);
+        }
+
+        .info-item:hover .info-icon,
+        .info-item:hover strong,
+        .info-item:hover span {
+            color: var(--azul-escuro);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--dourado);
+            min-width: 30px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--azul-marinho);
+            margin-bottom: 0.3rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .info-item span {
+            font-family: 'Arial', sans-serif;
+            color: var(--cinza);
+            font-size: 0.95rem;
+        }
+
+        .form-contato {
+            background: var(--azul-marinho);
+            padding: 3rem;
+            color: var(--branco);
+        }
+
+        .form-contato h3 {
+            color: var(--dourado);
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dourado);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            color: var(--branco);
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--dourado);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group select option {
+            background: var(--azul-marinho);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--azul-escuro);
+            color: var(--branco);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--dourado);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: rgba(255,255,255,0.7);
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--dourado);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--dourado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dourado);
+            transition: all 0.3s;
+            margin: 0;
+        }
+
+        .social-links a:hover {
+            background: var(--dourado);
+            color: var(--azul-escuro);
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 5px 30px rgba(37, 211, 102, 0.8); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--azul-escuro);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .sobre-grid, .contato-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sobre-img {
+                height: 300px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <nav>
+            <div class="logo">Moreira<span>,</span> Alves & Associados</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#areas">Áreas de Atuação</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">Advocacia de Excelência desde 1998</div>
+            <h1>Defendemos seus direitos com <span>ética, dedicação</span> e experiência</h1>
+            <p>Soluções jurídicas personalizadas para pessoas físicas e empresas. Mais de 25 anos construindo histórias de sucesso e confiança.</p>
+            <a href="#contato" class="btn">Agende uma Consulta</a>
+            <a href="#areas" class="btn btn-outline">Nossas Áreas</a>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Quem Somos</span>
+                <h2>Tradição e Modernidade no Direito</h2>
+            </div>
+            <div class="sobre-grid">
+                <div class="sobre-img"></div>
+                <div class="sobre-texto">
+                    <h3>Um escritório com história e compromisso</h3>
+                    <p>Fundado em 1998 pelos Drs. Ricardo Moreira e Helena Alves, nosso escritório nasceu com o propósito de oferecer assessoria jurídica de alto nível, pautada pela ética, transparência e resultados concretos.</p>
+                    <p>Ao longo de mais de duas décadas, construímos uma reputação sólida no mercado jurídico, atendendo clientes em todo o Brasil com soluções estratégicas e personalizadas para cada caso.</p>
+                    <p>Nossa equipe multidisciplinar combina experiência consolidada com atualização constante, garantindo o melhor atendimento em todas as áreas do Direito.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>25+</h4>
+                            <p>Anos de Experiência</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>3.500+</h4>
+                            <p>Casos Atendidos</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>98%</h4>
+                            <p>Clientes Satisfeitos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section id="areas">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Especialidades</span>
+                <h2>Áreas de Atuação</h2>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">⚖️</div>
+                    <h3>Direito Civil</h3>
+                    <p>Contratos, responsabilidade civil, direito do consumidor, família e sucessões com atuação estratégica e preventiva.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🏢</div>
+                    <h3>Direito Empresarial</h3>
+                    <p>Assessoria completa para empresas, desde a constituição societária até recuperação judicial e compliance.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">👔</div>
+                    <h3>Direito Trabalhista</h3>
+                    <p>Defesa de empregados e empregadores em ações trabalhistas, consultoria preventiva e acordos estratégicos.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🏛️</div>
+                    <h3>Direito Tributário</h3>
+                    <p>Planejamento tributário, defesa em execuções fiscais e recuperação de créditos tributários para empresas.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🏠</div>
+                    <h3>Direito Imobiliário</h3>
+                    <p>Compra, venda, locação, usucapião, regularização de imóveis e soluções para conflitos fundiários.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🛡️</div>
+                    <h3>Direito Penal</h3>
+                    <p>Defesa técnica em processos criminais, habeas corpus, recursos e acompanhamento em inquéritos policiais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="diferenciais">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Por que nos escolher</span>
+                <h2>Nossos Diferenciais</h2>
+            </div>
+            <div class="diferenciais-grid">
+                <div class="diferencial-item">
+                    <div class="icon">★</div>
+                    <h3>Experiência Comprovada</h3>
+                    <p>Mais de 25 anos de atuação com casos de alta complexidade em todo o território nacional.</p>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon">⚡</div>
+                    <h3>Agilidade e Eficiência</h3>
+                    <p>Processos otimizados e comunicação transparente para que você acompanhe cada etapa.</p>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon">🤝</div>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Cada cliente é único. Desenvolvemos estratégias sob medida para suas necessidades.</p>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon">📚</div>
+                    <h3>Equipe Especializada</h3>
+                    <p>Advogados com pós-graduação e especialização nas mais diversas áreas do Direito.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPE -->
+    <section id="equipe">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Profissionais</span>
+                <h2>Nossa Equipe</h2>
+            </div>
+            <div class="equipe-grid">
+                <div class="advogado-card">
+                    <div class="advogado-foto">RM</div>
+                    <h3>Dr. Ricardo Moreira</h3>
+                    <p class="cargo">Sócio Fundador</p>
+                    <p class="oab">OAB/SP 123.456 • Direito Empresarial</p>
+                </div>
+                <div class="advogado-card">
+                    <div class="advogado-foto">HA</div>
+                    <h3>Dra. Helena Alves</h3>
+                    <p class="cargo">Sócia Fundadora</p>
+                    <p class="oab">OAB/SP 234.567 • Direito Civil</p>
+                </div>
+                <div class="advogado-card">
+                    <div class="advogado-foto">PS</div>
+                    <h3>Dr. Paulo Santos</h3>
+                    <p class="cargo">Advogado Sênior</p>
+                    <p class="oab">OAB/SP 345.678 • Direito Trabalhista</p>
+                </div>
+                <div class="advogado-card">
+                    <div class="advogado-foto">MC</div>
+                    <h3>Dra. Marina Costa</h3>
+                    <p class="cargo">Advogada Sênior</p>
+                    <p class="oab">OAB/SP 456.789 • Direito Tributário</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos" id="depoimentos">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Depoimentos</span>
+                <h2>O que dizem nossos clientes</h2>
+            </div>
+            <div class="depoimentos-grid">
+                <div class="depoimento">
+                    <div class="estrelas">★★★★★</div>
+                    <p>Profissionalismo e dedicação excepcionais. Resolveram um caso complexo da minha empresa com agilidade e competência. Recomendo sem hesitar.</p>
+                    <div class="depoimento-autor">
+                        <div class="autor-foto">CF</div>
+                        <div class="autor-info">
+                            <strong>Carlos Ferreira</strong>
+                            <span>Empresário • São Paulo/SP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento">
+                    <div class="estrelas">★★★★★</div>
+                    <p>Atendimento humanizado e transparente. Me senti acolhida em um momento difícil. A equipe foi incansável na defesa dos meus direitos.</p>
+                    <div class="depoimento-autor">
+                        <div class="autor-foto">AS</div>
+                        <div class="autor-info">
+                            <strong>Ana Silva</strong>
+                            <span>Cliente • Rio de Janeiro/RJ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento">
+                    <div class="estrelas">★★★★★</div>
+                    <p>Contratei para uma questão tributária e o resultado superou as expectativas. Equipe altamente qualificada e ética impecável.</p>
+                    <div class="depoimento-autor">
+                        <div class="autor-foto">RO</div>
+                        <div class="autor-info">
+                            <strong>Roberto Oliveira</strong>
+                            <span>Diretor Financeiro • Campinas/SP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Fale Conosco</span>
+                <h2>Entre em Contato</h2>
+            </div>
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <h3>Estamos prontos para atendê-lo</h3>
+                    <p>Agende uma consulta inicial sem compromisso. Nossa equipe está à disposição para analisar seu caso e apresentar as melhores soluções jurídicas.</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <strong>Endereço</strong>
+                            <span>Av. Paulista, 1578 - 12º andar<br>Bela Vista, São Paulo/SP - 01310-200</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <strong>Telefone</strong>
+                            <span>(11) 3456-7890 • (11) 98765-4321</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <strong>E-mail</strong>
+                            <span>contato@moreiraalves.adv.br</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">🕐</div>
+                        <div>
+                            <strong>Horário de Atendimento</strong>
+                            <span>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h (agendamento)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="form-contato" onsubmit="enviarFormulario(event)">
+                    <h3>Envie sua mensagem</h3>
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" required placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="tel" required placeholder="(11) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label>Área de Interesse</label>
+                        <select required>
+                            <option value="">Selecione uma área</option>
+                            <option>Direito Civil</option>
+                            <option>Direito Empresarial</option>
+                            <option>Direito Trabalhista</option>
+                            <option>Direito Tributário</option>
+                            <option>Direito Imobiliário</option>
+                            <option>Direito Penal</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensagem</label>
+                        <textarea required placeholder="Descreva brevemente sua situação..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Moreira, Alves & Associados</h4>
+                <p>Escritório de advocacia com mais de 25 anos de tradição, oferecendo soluções jurídicas completas para pessoas físicas e empresas em todo o Brasil.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="WhatsApp">📱</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <a href="#home">Início</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#areas">Áreas de Atuação</a>
+                <a href="#equipe">Equipe</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-col">
+                <h4>Áreas</h4>
+                <a href="#">Direito Civil</a>
+                <a href="#">Direito Empresarial</a>
+                <a href="#">Direito Trabalhista</a>
+                <a href="#">Direito Tributário</a>
+                <a href="#">Direito Imobiliário</a>
+                <a href="#">Direito Penal</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>📍 Av. Paulista, 1578<br>São Paulo/SP</p>
+                <p>📞 (11) 3456-7890</p>
+                <p>✉️ contato@moreiraalves.adv.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Moreira, Alves & Associados Advocacia. Todos os direitos reservados. | OAB/SP 12.345</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/5511987654321" class="whatsapp-float" target="_blank" title="Fale pelo WhatsApp">💬</a>
+
+    <script>
+        // Menu mobile
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fechar menu ao clicar em link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Formulário
+        function enviarFormulario(e) {
+            e.preventDefault();
+            alert('✅ Mensagem enviada com sucesso!\n\nEm breve nossa equipe entrará em contato.');
+            e.target.reset();
+        }
+
+        // Animação ao scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.area-card, .advogado-card, .depoimento, .diferencial-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
