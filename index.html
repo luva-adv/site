@@ -1569,10 +1569,10 @@
         </a>
       </div>
       <div class="cta-info reveal">
-        <span><i class="fas fa-location-dot"></i> Rua Cândido Lopes, 146 — Centro, Curitiba/PR</span>
+        <span><i class="fas fa-location-dot"></i> Rua Cândido Lopes, 146 — Centro, Curitiba/PR — CEP 80020-060</span>
         <span><i class="fas fa-phone"></i> <a href="tel:+5541988568904">(41) 98856-8904</a></span>
         <span><i class="fas fa-envelope"></i> <a href="mailto:suporteambientedigital@gmail.com">suporteambientedigital@gmail.com</a></span>
-        <span><i class="fas fa-clock"></i> Atendimento com hora marcada</span>
+        <span><i class="fas fa-clock"></i> Segunda a sexta, das 9h às 18h, com hora marcada</span>
       </div>
       <!-- Mapa da localização (SEO local + experiência do usuário) -->
       <div class="mapa-wrap reveal">
@@ -1633,11 +1633,11 @@
             </li>
             <li>
               <i class="fas fa-location-dot"></i>
-              <a href="https://www.google.com/maps/search/?api=1&query=Rua+C%C3%A2ndido+Lopes+146+Centro+Curitiba+PR" target="_blank" rel="noopener">Rua Cândido Lopes, 146 — Centro<br>Curitiba/PR</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Rua+C%C3%A2ndido+Lopes+146+Centro+Curitiba+PR" target="_blank" rel="noopener">Rua Cândido Lopes, 146 — Centro<br>Curitiba/PR — CEP 80020-060</a>
             </li>
             <li>
               <i class="fas fa-clock"></i>
-              <span>Atendimento com hora marcada<br>Presencial e online</span>
+              <span>Atendimento com hora marcada<br>Segunda a sexta, das 9h às 18h<br>Presencial e online</span>
             </li>
           </ul>
         </div>
@@ -1871,7 +1871,49 @@
           { "@type": "City", "name": "Curitiba" },
           { "@type": "State", "name": "Paraná" }
         ],
-        "knowsAbout": ["Direito Civil", "Direito de Família e Sucessões", "Direito Previdenciário", "Direito Imobiliário", "Planejamento Patrimonial"],
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": -25.4356,
+            "longitude": -49.2698
+          },
+          "geoRadius": "120000"
+        },
+        "employee": {
+          "@type": "Person",
+          "name": "Luciana Borges",
+          "jobTitle": "Advogada",
+          "identifier": {
+            "@type": "PropertyValue",
+            "name": "Inscrição na OAB/PR",
+            "value": "93.255"
+          },
+          "worksFor": { "@id": "#negocio" }
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Luciana Borges",
+          "jobTitle": "Advogada",
+          "worksFor": { "@id": "#negocio" }
+        },
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Ordem dos Advogados do Brasil — OAB/PR",
+          "url": "https://www.oabpr.org.br/"
+        },
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Inscrição profissional",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Ordem dos Advogados do Brasil — OAB/PR"
+          }
+        },
+        "sameAs": [
+          "https://www.oabpr.org.br/"
+        ],
+        "knowsAbout": ["Direito Civil", "Direito de Família e Sucessões", "Direito Previdenciário", "Direito Imobiliário", "Direito Patrimonial", "Direito Contratual"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Serviços jurídicos",
@@ -1939,12 +1981,11 @@
       }
     ]
   }
-  /***
-  * Este JSON-LD foi gerado automaticamente pelo script do site.
-  * Ele contém dados estruturados para SEO, incluindo informações sobre o negócio, serviços, FAQ e a advogada.
-  * Para mais informações sobre dados estruturados, consulte: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
-  * teste
-  ***/
   </script>
+  <!--
+    Dados estruturados (JSON-LD) gerados para SEO: informações do negócio,
+    serviços, FAQ e a advogada. Referência:
+    https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
+  -->
 </body>
 </html>
