@@ -1,5 +1,5 @@
 # robots.txt — Ambiente Jurídico Digital
-# https://ambientejuridicodigital.com.br/robots.txt
+# https://www.ambientejuridicodigital.com.br/robots.txt
 
 # ===== Google e buscadores tradicionais =====
 User-agent: *
@@ -51,4 +51,4 @@ User-agent: cohere-ai
 Allow: /
 
 # ===== Sitemap =====
-Sitemap: https://ambientejuridicodigital.com.br/sitemap.xml
+Sitemap: https://www.ambientejuridicodigital.com.br/sitemap.xml

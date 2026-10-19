@@ -1,14 +1,14 @@
 # Declaração de uso de conteúdo para Inteligência Artificial
-# Ambiente Jurídico Digital — https://ambientejuridicodigital.com.br/
+# Ambiente Jurídico Digital — https://www.ambientejuridicodigital.com.br/
 # Formato: content-ai.txt (padrão de declarações para sistemas de IA)
 
-site: https://ambientejuridicodigital.com.br/
+site: https://www.ambientejuridicodigital.com.br/
 name: Ambiente Jurídico Digital
 contact: suporteambientedigital@gmail.com
 
 # Direitos de uso do conteúdo por sistemas de IA
 attribution: required
-attribution-identifier: https://ambientejuridicodigital.com.br/
+attribution-identifier: https://www.ambientejuridicodigital.com.br/
 summary: allowed
 full-text-derivation: allowed-with-attribution
 commercial-use: not-permitted
