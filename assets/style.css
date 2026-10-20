@@ -36,6 +36,9 @@
     h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0.01em; line-height: 1.25; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; height: auto; display: block; }
+    /* display:contents remove a caixa do <picture> do fluxo, para que o <img>
+       continue se comportando exatamente como antes do uso de WebP */
+    picture { display: contents; }
     ul { list-style: none; }
 
     .container { max-width: 1220px; margin: 0 auto; padding: 0 2rem; }
@@ -758,7 +761,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('luciana-terraco.jpg') center 28%/cover no-repeat;
+      background: url('./luciana-terraco.jpg') center 28%/cover no-repeat;
+      background-image: image-set(url('./luciana-terraco.webp') type('image/webp'), url('./luciana-terraco.jpg') type('image/jpeg'));
       opacity: 0.09;
       mix-blend-mode: luminosity;
       pointer-events: none;

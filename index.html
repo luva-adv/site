@@ -37,10 +37,16 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#07031c">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- ===================== PERFORMANCE =====================
+       Fontes, Font Awesome e imagens auto-hospedados. O site passa a abrir
+       com 1 origem apenas (o proprio dominio) em vez de 3: cada origem
+       externa custava DNS + TLS (~150ms em 4G) no caminho critico.
+       Os preloads baixam em paralelo o que o LCP precisa. -->
+  <link rel="preload" href="assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/luciana-hero.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="assets/fonts.css?v=20261020">
+  <link rel="stylesheet" href="assets/fontawesome.css?v=20261020">
   <link rel="stylesheet" href="assets/style.css?v=20261020">
 </head>
 <body>
@@ -101,7 +107,10 @@
       </div>
       <div class="hero-image reveal direita">
         <div class="frame">
-          <img src="assets/luciana-hero.jpg" alt="Dra. Luciana Borges Ramos em atendimento no Ambiente Jurídico Digital" width="1100" height="1653">
+          <picture>
+            <source srcset="assets/luciana-hero.webp" type="image/webp">
+            <img src="assets/luciana-hero.jpg" alt="Dra. Luciana Borges Ramos em atendimento no Ambiente Jurídico Digital" width="1100" height="1653" fetchpriority="high" decoding="async">
+          </picture>
         </div>
         <div class="hero-tag">
           <i class="fas fa-scale-balanced"></i>
@@ -302,7 +311,10 @@
   <section id="sobre">
     <div class="container sobre-grid">
       <div class="sobre-foto reveal esq">
-        <img src="assets/luciana-plenario.jpg" alt="Dra. Luciana Borges Ramos em evento na sede da OAB Paraná" width="1000" height="1502">
+        <picture>
+          <source srcset="assets/luciana-plenario.webp" type="image/webp">
+          <img src="assets/luciana-plenario.jpg" alt="Dra. Luciana Borges Ramos em evento na sede da OAB Paraná" width="1000" height="1502" loading="lazy" decoding="async">
+        </picture>
         <div class="sobre-selo">
           <strong>8</strong>
           <small>áreas de atuação</small>
@@ -477,7 +489,10 @@
             data-video="assets/depoimentos/video-roberto.mp4"
             data-nome="Roberto S." data-area="Holding Familiar"
             aria-label="Reproduzir depoimento de Roberto sobre Holding Familiar">
-            <img src="assets/depoimentos/poster-roberto.jpg" alt="Roberto, cliente de holding familiar, sorrindo em depoimento em vídeo" width="900" height="506">
+            <picture>
+              <source srcset="assets/depoimentos/poster-roberto.webp" type="image/webp">
+              <img src="assets/depoimentos/poster-roberto.jpg" alt="Roberto, cliente de holding familiar, sorrindo em depoimento em vídeo" width="900" height="506" decoding="async">
+            </picture>
             <figcaption class="depo-meta">
               <strong>Roberto S.</strong>
               <small>Holding Familiar · Vídeo 0:54</small>
@@ -488,7 +503,10 @@
             data-video="assets/depoimentos/video-andre.mp4"
             data-nome="André C." data-area="Inventário e Contratos"
             aria-label="Reproduzir depoimento de André sobre inventário e contratos">
-            <img src="assets/depoimentos/poster-andre.jpg" alt="André, cliente de inventário e contratos, em depoimento em vídeo" width="900" height="506" loading="lazy">
+            <picture>
+              <source srcset="assets/depoimentos/poster-andre.webp" type="image/webp">
+              <img src="assets/depoimentos/poster-andre.jpg" alt="André, cliente de inventário e contratos, em depoimento em vídeo" width="900" height="506" loading="lazy" decoding="async">
+            </picture>
             <figcaption class="depo-meta">
               <strong>André C.</strong>
               <small>Inventário e Contratos · Vídeo 2:16</small>
@@ -499,7 +517,10 @@
             data-video="assets/depoimentos/video-sandro.mp4"
             data-nome="Sandro M." data-area="Pensão Alimentícia"
             aria-label="Reproduzir depoimento de Sandro sobre pensão alimentícia">
-            <img src="assets/depoimentos/poster-sandro.jpg" alt="Sandro, cliente em questão de pensão alimentícia, em depoimento em vídeo" width="506" height="900" loading="lazy">
+            <picture>
+              <source srcset="assets/depoimentos/poster-sandro.webp" type="image/webp">
+              <img src="assets/depoimentos/poster-sandro.jpg" alt="Sandro, cliente em questão de pensão alimentícia, em depoimento em vídeo" width="506" height="900" loading="lazy" decoding="async">
+            </picture>
             <figcaption class="depo-meta">
               <strong>Sandro M.</strong>
               <small>Pensão Alimentícia · Vídeo 1:19</small>
@@ -510,7 +531,10 @@
             data-video="assets/depoimentos/video-eduardo.mp4"
             data-nome="Eduardo L." data-area="Usucapião"
             aria-label="Reproduzir depoimento de Eduardo sobre usucapião">
-            <img src="assets/depoimentos/poster-eduardo.jpg" alt="Eduardo, cliente em usucapião, em depoimento em vídeo" width="506" height="900" loading="lazy">
+            <picture>
+              <source srcset="assets/depoimentos/poster-eduardo.webp" type="image/webp">
+              <img src="assets/depoimentos/poster-eduardo.jpg" alt="Eduardo, cliente em usucapião, em depoimento em vídeo" width="506" height="900" loading="lazy" decoding="async">
+            </picture>
             <figcaption class="depo-meta">
               <strong>Eduardo L.</strong>
               <small>Usucapião · Vídeo 0:31</small>
@@ -802,7 +826,8 @@
 
     const abrirLightbox = (card) => {
       lbVideo.src = card.dataset.video;
-      lbVideo.poster = card.querySelector('img').src;
+      const img = card.querySelector('img');
+      lbVideo.poster = img.currentSrc || img.src;
       lbNome.textContent = card.dataset.nome;
       lbArea.textContent = card.dataset.area;
       lightbox.classList.add('open');
