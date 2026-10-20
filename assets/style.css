@@ -544,6 +544,17 @@
     .sobre-lista li { display: flex; gap: 0.95rem; align-items: flex-start; color: var(--text); font-weight: 300; font-size: 0.98rem; }
     .sobre-lista li i { color: var(--gold); font-size: 1.05rem; margin-top: 0.42rem; transition: transform 0.4s var(--ease); }
     .sobre-lista li:hover i { transform: scale(1.2); color: var(--gold-bright); }
+    .sobre-oab {
+      display: flex; gap: 0.95rem; align-items: flex-start;
+      margin: 0 0 2rem; padding: 1.05rem 1.25rem;
+      border: 1px solid rgba(240, 194, 90, 0.2);
+      border-radius: var(--radius);
+      background: rgba(16, 17, 54, 0.55);
+      color: var(--text-soft); font-size: 0.85rem; font-weight: 300; line-height: 1.65;
+    }
+    .sobre-oab i { color: var(--gold); margin-top: 0.28rem; flex-shrink: 0; }
+    .sobre-oab span { flex: 1 1 auto; }
+    .sobre-oab strong { color: var(--offwhite); font-weight: 600; }
 
     /* ===================== FAQ ===================== */
     #duvidas {
