@@ -93,6 +93,12 @@
     .legal-note p:last-child { margin-bottom: 0; }
     .legal-back { margin-top: 3.2rem; }
   </style>
+  <!-- ===================== GOOGLE ANALYTICS 4 + CONSENT MODE v2 =====================
+       Nenhum cookie e gravado antes da escolha do visitante: o consentimento
+       padrao e "denied" e so muda para "granted" apos o aceite. O ID de
+       medicao fica em assets/analytics.js. -->
+  <script src="assets/analytics.js?v=20261020" defer></script>
+  <script src="assets/consent.js?v=20261020" defer></script>
 </head>
 <body>
 
@@ -252,12 +258,37 @@
             <li><strong>Autoridades públicas e órgãos do Poder Judiciário:</strong> quando houver obrigação legal de comunicação ou guardado de dados.</li>
           </ul>
 
-          <h2>6. Cookies e rastreamento</h2>
+          <h2>6. Cookies, Consent Mode e medição de audiência</h2>
           <p>
-            Na data desta atualização, este site <strong>não grava cookies de rastreamento
-            nem de publicidade</strong>. Caso ferramentas de medição de audiência sejam
-            ativadas no futuro, esta Política será atualizada antes da ativação, indicando
-            quais cookies serão utilizados, sua finalidade e como recusá-los.
+            Este site utiliza o <strong>Google Analytics 4</strong> para medir o alcance das
+            páginas e entender como os visitantes chegam até aqui. A coleta é feita por meio
+            do <strong>Google Consent Mode v2</strong>, com o consentimento padrão em
+            <strong>"denied"</strong>: <strong>nenhum cookie é gravado no seu navegador antes
+            da sua escolha</strong>. A decisão é registrada apenas no armazenamento local do
+            próprio navegador (localStorage), sem identificação pessoal.
+          </p>
+          <ul>
+            <li><strong>Se você aceitar:</strong> o Analytics_storage passa a "granted" e são
+              enviados dados de navegação agregados (páginas, origem do acesso, dispositivo,
+              tempo na página), sem cookies que permitam identificar você em outros sites.</li>
+            <li><strong>Se você recusar:</strong> o Analytics_storage permanece "denied" e
+              <strong>nenhum cookie é criado</strong>. O Google continua recebendo pings
+              "cookieless" para que a audiência não seja contabilizada como zero — nenhuma
+              informação que permita identificar você é transmitida.</li>
+            <li><strong>Para revogar a qualquer momento:</strong> limpe os dados do site nas
+              configurações do seu navegador. O banner aparecerá de novo na próxima visita
+              para que você possa decidir novamente.</li>
+          </ul>
+          <p>
+            O site também utiliza a API do Google Maps para exibir o mapa da localização e o
+            botão "Como chegar". O carregamento desse mapa é feito por um servidor do Google e
+            pode implicar a comunicação de dados técnicos ao Google — por isso ele está
+            carregado de forma adiada (lazy), apenas quando a seção do mapa entra em tela.
+          </p>
+          <p>
+            Não utilizamos publicidade, remarketing, perfis de audiência de terceiros nem
+            venda de dados. O único cookie de terceiros em uso é o <code>_ga</code>, criado
+            pelo Google Analytics apenas após o aceite.
           </p>
 
           <h2>7. Por quanto tempo guardamos os dados</h2>
@@ -449,5 +480,21 @@
     // Ano atual
     document.getElementById('ano').textContent = new Date().getFullYear();
   </script>
+
+  <!-- ===================== BANNER DE CONSENTIMENTO (LGPD) ===================== -->
+  <div class="consent-banner" id="consentBanner" role="dialog" aria-live="polite"
+       aria-label="Aviso de privacidade e cookies" hidden>
+    <div class="consent-texto">
+      <strong>Privacidade no centro</strong>
+      <p>
+        Usamos o Google Analytics para medir o alcance do site. Nenhum cookie é gravado
+        antes da sua escolha. Detalhes na <a href="privacidade.html">Política de Privacidade</a>.
+      </p>
+    </div>
+    <div class="consent-acoes">
+      <button class="btn-consent recusar" id="consentRecusar" type="button">Recusar</button>
+      <button class="btn-consent aceitar" id="consentAceitar" type="button">Aceitar</button>
+    </div>
+  </div>
 </body>
 </html>

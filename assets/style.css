@@ -895,6 +895,43 @@
     .footer-disclaimer { max-width: 860px; margin: 0 auto; padding: 0 2rem 1.8rem; }
     .footer-disclaimer p { color: #5f5b78; font-size: 0.72rem; line-height: 1.7; text-align: center; font-weight: 300; }
 
+    /* ===================== BANNER DE CONSENTIMENTO ===================== */
+    .consent-banner {
+      position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 1200;
+      max-width: 760px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem 1.6rem;
+      padding: 1.3rem 1.5rem;
+      border: 1px solid rgba(240, 194, 90, 0.35);
+      border-radius: 6px;
+      background: linear-gradient(160deg, rgba(16, 17, 54, 0.98) 0%, rgba(7, 3, 28, 0.98) 100%);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
+      opacity: 0; transform: translateY(18px);
+      transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+    }
+    .consent-banner[hidden] { display: none; }
+    .consent-banner.visivel { opacity: 1; transform: translateY(0); }
+    .consent-texto { flex: 1 1 320px; min-width: 0; }
+    .consent-texto strong {
+      display: block; color: var(--gold); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .consent-texto p { color: var(--text-soft); font-size: 0.84rem; font-weight: 300; line-height: 1.6; margin: 0; }
+    .consent-texto a { color: var(--gold); border-bottom: 1px solid rgba(240, 194, 90, 0.35); }
+    .consent-acoes { display: flex; gap: 0.7rem; flex: 0 0 auto; }
+    .btn-consent {
+      font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.85rem 1.5rem; border-radius: 3px; cursor: pointer;
+      border: 1px solid rgba(240, 194, 90, 0.4); background: transparent; color: var(--gold);
+      transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-consent:hover { background: rgba(240, 194, 90, 0.12); transform: translateY(-2px); }
+    .btn-consent.aceitar {
+      background: linear-gradient(135deg, #f7d67e 0%, var(--gold) 45%, var(--gold-deep) 100%);
+      color: var(--navy); border-color: transparent; font-weight: 700;
+    }
+    .btn-consent.aceitar:hover { filter: brightness(1.06); }
+
     /* ===================== BOTÃO FLUTUANTE WHATSAPP ===================== */
     .whats-float {
       position: fixed;

@@ -47,6 +47,12 @@
   <link rel="preload" href="assets/luciana-hero.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/fonts.css?v=20261020">
   <link rel="stylesheet" href="assets/style.css?v=20261020">
+  <!-- ===================== GOOGLE ANALYTICS 4 + CONSENT MODE v2 =====================
+       Nenhum cookie e gravado antes da escolha do visitante: o consentimento
+       padrao e "denied" e so muda para "granted" apos o aceite. O ID de
+       medicao fica em assets/analytics.js. -->
+  <script src="assets/analytics.js?v=20261020" defer></script>
+  <script src="assets/consent.js?v=20261020" defer></script>
 </head>
 <body>
 
@@ -1187,5 +1193,21 @@
     NOTA: o rich result de FAQ foi descontinuado pelo Google em 07/05/2026 —
     o bloco FAQPage permanece por semântica, AI Overviews e "People Also Ask".
   -->
+
+  <!-- ===================== BANNER DE CONSENTIMENTO (LGPD) ===================== -->
+  <div class="consent-banner" id="consentBanner" role="dialog" aria-live="polite"
+       aria-label="Aviso de privacidade e cookies" hidden>
+    <div class="consent-texto">
+      <strong>Privacidade no centro</strong>
+      <p>
+        Usamos o Google Analytics para medir o alcance do site. Nenhum cookie é gravado
+        antes da sua escolha. Detalhes na <a href="privacidade.html">Política de Privacidade</a>.
+      </p>
+    </div>
+    <div class="consent-acoes">
+      <button class="btn-consent recusar" id="consentRecusar" type="button">Recusar</button>
+      <button class="btn-consent aceitar" id="consentAceitar" type="button">Aceitar</button>
+    </div>
+  </div>
 </body>
 </html>
