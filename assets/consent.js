@@ -41,7 +41,9 @@
 
   /* ---------- 2. carregar o GA4 (so se o ID estiver configurado) ---------- */
   var id = window.AJD_GA4_ID || '';
-  if (id && id.indexOf('XXXX') === -1) {
+  var ga4Ativo = !!(id && id.indexOf('XXXX') === -1);
+
+  if (ga4Ativo) {
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
@@ -76,9 +78,11 @@
   var escolha = ler();
   if (escolha === 'granted' || escolha === 'denied') {
     aplicar(escolha);
-  } else {
+  } else if (ga4Ativo) {
+    // Primeira visita: mostra o banner depois de 1,2s, sem bloquear a leitura da pagina
     window.setTimeout(mostrar, 1200);
   }
+  // Sem GA4 ativo nao ha cookie algum: o banner nao aparece.
 
   document.addEventListener('DOMContentLoaded', function () {
     var a = document.getElementById('consentAceitar');
