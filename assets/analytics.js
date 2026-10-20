@@ -8,4 +8,4 @@
    Enquanto o ID contiver "XXXX", o GA4 nao e carregado - o
    site funciona normalmente, sem nenhuma chamada ao Google.
    ============================================================ */
-window.AJD_GA4_ID = 'G-XXXXXXXXXX';
+window.AJD_GA4_ID = 'G-BGY1VSERKH';
