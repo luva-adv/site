@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ambientejuridicodigital.com.br/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.ambientejuridicodigital.com.br/assets/logo.png</image:loc>
+      <image:title>Ambiente Jurídico Digital — logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ambientejuridicodigital.com.br/assets/luciana-hero.jpg</image:loc>
+      <image:title>Advogada Luciana Borges em atendimento no Ambiente Jurídico Digital</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ambientejuridicodigital.com.br/assets/luciana-plenario.jpg</image:loc>
+      <image:title>Advogada Luciana Borges na sede da OAB Paraná</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ambientejuridicodigital.com.br/assets/depoimentos/poster-roberto.jpg</image:loc>
+      <image:title>Depoimento em vídeo de Roberto S. — Holding Familiar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ambientejuridicodigital.com.br/assets/depoimentos/poster-andre.jpg</image:loc>
+      <image:title>Depoimento em vídeo de André C. — Inventário e Contratos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ambientejuridicodigital.com.br/assets/depoimentos/poster-sandro.jpg</image:loc>
+      <image:title>Depoimento em vídeo de Sandro M. — Pensão Alimentícia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ambientejuridicodigital.com.br/assets/depoimentos/poster-eduardo.jpg</image:loc>
+      <image:title>Depoimento em vídeo de Eduardo L. — Usucapião</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ambientejuridicodigital.com.br/privacidade.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
